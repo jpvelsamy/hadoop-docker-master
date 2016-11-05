@@ -1,4 +1,4 @@
-#Apache Hadoop 2.7.1 Docker image
+#Apache Hadoop 2.7.1 Docker image(forked from sequenceiq'a hadoop docker image)
 # Build the image
 
 If you'd like to try directly from the Dockerfile you can build the image as:
