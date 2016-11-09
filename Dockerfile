@@ -63,6 +63,7 @@ ADD slaves $HADOOP_PREFIX/etc/hadoop/slaves
 
 RUN $HADOOP_PREFIX/bin/hdfs namenode -format
 
+
 # fixing the libhadoop.so like a boss
 RUN rm -rf /usr/local/hadoop/lib/native
 RUN mv /tmp/native /usr/local/hadoop/lib
