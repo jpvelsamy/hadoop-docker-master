@@ -1,0 +1,10 @@
+1. Worker nodes
+ sudo docker run -it -h bonsai-worker-1 --ip 172.18.0.5 --add-host bonsai-master:172.18.0.2 --add-host bonsai-worker-2:172.18.0.6 --add-host bonsai-worker-3:172.18.0.7 --net bonsai-net hadoop/bonsai-worker:2.7.1 /etc/bootstrap.sh -bash
+
+sudo docker run -it -h bonsai-worker-2 --ip 172.18.0.6 --add-host bonsai-master:172.18.0.2 --add-host bonsai-worker-3:172.18.0.7 --add-host bonsai-worker-1:172.18.0.5 --net bonsai-net hadoop/bonsai-worker:2.7.1 /etc/bootstrap.sh -bash
+
+sudo docker run -it -h bonsai-worker-3 --ip 172.18.0.7 --add-host bonsai-master:172.18.0.2 --add-host bonsai-worker-2:172.18.0.6 --add-host bonsai-worker-1:172.18.0.5 --net bonsai-net hadoop/bonsai-worker:2.7.1 /etc/bootstrap.sh -bash
+
+
+2. Start the master server
+sudo docker run -it -h bonsai-master --ip 172.18.0.2 --add-host bonsai-worker-1:172.18.0.5 --add-host bonsai-worker-2:172.18.0.6 --add-host bonsai-worker-3:172.18.0.7 --net bonsai-net hadoop/bonsai-master:2.7.1 /etc/bootstrap.sh -bash
